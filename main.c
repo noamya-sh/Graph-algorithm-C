@@ -19,22 +19,18 @@ int main() {
         {
             case 'A':
             {
-//                printf("\nin A\n");
                 if (head==NULL)
                     build_graph_cmd(&head);
                 else{
                     deleteGraph_cmd(&head);
                     build_graph_cmd(&head);
                 }
-//                printGraph_cmd(head);   //Todo: dbs
                 break;
             }
             case 'n':
             {
-//                printf("\nin n\n");
                 scanf(" %d", &id);
                 pnode n_node = search(&head, id);
-//                printf("\n\nfind! %d\n", n_node->node_num);
                 while (scanf(" %d", &i)==1)   //digit
                 {
                     dest = i;
@@ -44,12 +40,10 @@ int main() {
                         printf("Error: not found dest of edge");    //Todo: dbs
                     addEdge(&(n_node->edges), w, &p_dest);
                 }
-//                printGraph_cmd(head);   //Todo: dbs
                 break;
             }
             case 'B':
             {
-//                printf("\nin B\n");
                 scanf(" %d", &id);
                 pnode n_node = search(&head, id);
                 if (n_node==NULL) {     //creat new node
@@ -76,21 +70,17 @@ int main() {
                         printf("\nError: not found dest of edge: %d\n", dest);    //Todo: dbs
                     addEdge(&(n_node->edges), w, &p_dest);
                 }
-//                printGraph_cmd(head);   //Todo: dbs
                 break;
             }
             case 'D':
             {
-                // printf("\nin D\n");
                 int id;
                 scanf(" %d", &id);
                 delete_node_cmd(&head, id);
-//                printGraph_cmd(head);   //Todo: dbs
                 break;
             }
             case 'S':
             {
-//                shortsPath_cmd(head);
                 int src;
                 int dest;
                 scanf(" %d", &src);
@@ -115,7 +105,6 @@ int main() {
                 int res = tsp(&head, arr, k);
                 printf("TSP shortest path: %d \n",res);
                 free(arr);
-//                TSP_cmd(head);
                 break;
             }
         }
